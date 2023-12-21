@@ -6,12 +6,12 @@ export default function Baseicononline()
     return (
       <View style = {style.container}>
       
-         <TouchableOpacity activeOpacity={.5} style = {style.text}>
+         <TouchableOpacity activeOpacity={.5} style = {style.icon}>
          <Image
-        style={style.tinyLogo}
+        style={style.image}
         source={require('../../assets/onlineicon.png')}
       />
-            <Text style = {style.text}>Online</Text>
+            <Text style = {style.name}>Online</Text>
          </TouchableOpacity>
       </View>
     );
@@ -20,22 +20,14 @@ export default function Baseicononline()
 const style = StyleSheet.create(
     {
         container : {
-            backgroundColor : 'white',
-            width : 80,
             display : 'flex',
-            justifyContent : 'center'
+            justifyContent : 'center',
+            alignContent : 'center',
         },
-
-        text : {
-            color : 'black',
-            fontSize : 15,
-            textAlign : 'center',
-        },
-
-        tinyLogo : {
-            height : 30,
-            width : 30,
-            alignSelf : 'center'
+ 
+        image : {
+         height : 30,
+         width : 30,
         }
         
     }

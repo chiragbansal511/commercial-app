@@ -6,12 +6,12 @@ export default function Baseiconhome()
     return (
       <View style = {style.container}>
       
-         <TouchableOpacity activeOpacity={.5} style = {style.text} on>
+         <TouchableOpacity activeOpacity={.5} style = {style.icon} on>
          <Image
-        style={style.tinyLogo}
+        style={style.image}
         source={require('../../assets/homeicon.png')}
       />
-            <Text style = {style.text}>Home</Text>
+            <Text style = {style.name}>Home</Text>
          </TouchableOpacity>
       </View>
     );
@@ -19,25 +19,16 @@ export default function Baseiconhome()
 
 const style = StyleSheet.create(
     {
-        container : {
-            backgroundColor : 'white',
-            width : 80,
-            display : 'flex',
-            justifyContent : 'center',
-            borderTopLeftRadius : 25,
-        },
+       container : {
+           display : 'flex',
+           justifyContent : 'center',
+           alignContent : 'center',
+           marginLeft : 10,
+       },
 
-        text : {
-            color : 'black',
-            fontSize : 15,
-            textAlign : 'center',
-        },
-
-        tinyLogo : {
-            height : 30,
-            width : 30,
-            alignSelf : 'center'
-        }
-        
+       image : {
+        height : 30,
+        width : 30,
+       }
     }
 )

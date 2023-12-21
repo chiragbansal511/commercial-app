@@ -27,8 +27,6 @@ const style = StyleSheet.create(
             backgroundColor : 'white',
             height : 80,
             justifyContent : 'space-between',
-            borderTopLeftRadius : 25,
-            borderTopRightRadius : 25,
         },
     }
 )

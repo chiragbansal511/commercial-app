@@ -1,28 +1,38 @@
 import React from "react";
-import {View , Text , Button , StyleSheet} from 'react-native';
-import Navbar from "../components/navbar/navbar.js";
-import Basebar from "../components/basebar/basebar.js";
+import {View , Text , Button , StyleSheet , ScrollView} from 'react-native';
 import Coupenswiper from "../components/swipper/coupens.js";
+import Storeswipper from "../components/swipper/storeswipper.js";
+import Productswipper from "../components/swipper/productswipper.js";
+import Brandscoupenswipper from "../components/swipper/brandscoupenswipper.js";
 
 export default function Home(){
+
     return (
-        <View style = {style.cointainer}>
-            <Navbar style = {style.ele}/>
+        <ScrollView style = {style.cointainer}>
             <Coupenswiper/>
-            <Basebar style = {style.ele}/>
-        </View>
+            <Text style={style.text}>Top online store</Text>
+            <Storeswipper />  
+            <Text style={style.text}>Top Offline store</Text>
+            <Storeswipper />  
+            <Text style={style.text}>Online shopping daily deals</Text>
+            <Productswipper />
+          <Brandscoupenswipper />
+        </ScrollView>
     );
 }
 
 const style = StyleSheet.create(
     {
         cointainer : {
-            display : 'flex',
-            flexDirection : 'column',
-            height : 780,
-           justifyContent : 'center',
-           alignContent : 'center'
+           display : 'flex',
+           flexDirection  : 'column',
         },
-      
+
+        text : {
+            fontSize : 20 , 
+            fontWeight : "bold",
+            textAlign : "center",
+            marginBottom : 10,
+        },
     }
 )

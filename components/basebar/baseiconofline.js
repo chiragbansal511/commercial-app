@@ -6,12 +6,12 @@ export default function Baseiconofline()
     return (
       <View style = {style.container}>
       
-         <TouchableOpacity activeOpacity={.5} style = {style.text}>
+         <TouchableOpacity activeOpacity={.5} style = {style.icon}>
          <Image
-        style={style.tinyLogo}
+        style={style.image}
         source={require('../../assets/oflineicon.png')}
       />
-            <Text style = {style.text}>Offline</Text>
+            <Text style = {style.name}>Offline</Text>
          </TouchableOpacity>
       </View>
     );
@@ -20,23 +20,14 @@ export default function Baseiconofline()
 const style = StyleSheet.create(
     {
         container : {
-            backgroundColor : 'white',
-            width : 80,
             display : 'flex',
-            justifyContent : 'center'
+            justifyContent : 'center',
+            alignContent : 'center',
         },
-
-        text : {
-            color : 'black',
-            fontSize : 15,
-            textAlign : 'center',
-            
-        },
-
-        tinyLogo : {
-            height : 30,
-            width : 30,
-            alignSelf : 'center'
+ 
+        image : {
+         height : 30,
+         width : 30,
         }
         
     }

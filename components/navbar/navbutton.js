@@ -1,26 +1,27 @@
 import React from "react";
-import {View , Text , TouchableOpacity , Image , StyleSheet , TextInput} from 'react-native';
+import {View , Text , TouchableOpacity , Image , StyleSheet , TextInput } from 'react-native';
 import { useState } from "react";
 
-export default function Navbutton(){
+export default function Navbutton({onClick}){
      const [Searchtext , setSearchtext] = useState('');
      const [Searchbar , setSearchbar] = useState(false);
 
         return (
-            <View style = {style.container1}>
+            <View style = {style.container}>
              
-             {!Searchbar && <View style = {style.container3}>
+             {!Searchbar && <View style = {style.navbarbutton}>
                 <TouchableOpacity activeOpacity={.5}
-              style = {style.container}>
+              style = {style.navbarimage}
+              onPress={onClick}>
              <Image
              source={require('../../assets/navbutton.png')}
-             style = {style.container}
+             style = {style.navbarimage}
               ></Image>
               </TouchableOpacity>
-
+                 
               <Image
-             source={require('../../assets/logo.png')}
-             style = {style.text}
+             style = {style.logo}
+             
               ></Image>
              
                 </View>
@@ -36,10 +37,10 @@ export default function Navbutton(){
 
 <TouchableOpacity activeOpacity={.5}
                onPress={()=>{setSearchbar(!Searchbar)}}
-               style = {style.container}>
+               style = {style.searchbutton}>
              <Image
              source={require('../../assets/searchbar.png')}
-             style = {style.container}
+             style = {style.searchbuttonimage}
              ></Image>
               </TouchableOpacity>  
             </View>
@@ -48,51 +49,58 @@ export default function Navbutton(){
 
 const style = StyleSheet.create(
     {
-        container : {
-            width : 60,
-            height : 60,
-        },
-        container1 :
-        {
-            backgroundColor : '#7415a2',
+        container : {    
+            backgroundColor : "#7415a2",
+            height : 90,
             display : 'flex',
             flexDirection : 'row',
-            height : 100,
-            justifyContent : 'space-between',
-           alignItems : 'center',
-        }, 
-
-        container2 : {
-            backgroundColor : '#7415a2',
-            display : 'flex',
-            flexDirection : 'row',
-            height : 100,
-            justifyContent : 'space-between',
-           alignItems : 'center',
+            justifyContent : 'center'
         },
 
-        container3 :{
-            width : 250,
-             display : 'flex',
-             flexDirection : 'row',
-            justifyContent : 'space-between',
-            alignItems : 'center'
+        navbarbutton : {
+           backgroundColor : "#7415a2",
+           height : 90,
+           width : 300,
+           display : 'flex',
+           flexDirection : 'row',
+           justifyContent : 'space-evenly',
+           alignItems : 'baseline',
+           marginLeft : 20,
+        },
+        
+        navbarimage : {
+            height : 55,
+            width : 55,
+            marginLeft : 5,
         },
 
-        text : {
-            width : 325,
-            height : 60,
-           
+        logo : {
+            height : 70,
+            width : 300,
+            marginLeft : 20,
         },
 
         search : {
-           backgroundColor : 'white',
-           height : 50,
-           width : 300,
-           borderRadius : 30,
-           fontSize : 15,
-           fontWeight : 'bold',
-           marginLeft : 25,
+            backgroundColor : 'white',
+            height : 50,
+            width : 310,
+            marginRight : 10,
+            alignSelf : 'center',
+            borderRadius : 40
         },
+        
+        searchbutton : {
+            backgroundColor : '#7415a2',
+            height : 90,
+            width : 40,
+            display : 'flex',
+            justifyContent : 'center',
+        },
+        
+        searchbuttonimage : {
+            height : 45,
+            width : 45,
+            marginLeft : -10,
+        }
     }
 )

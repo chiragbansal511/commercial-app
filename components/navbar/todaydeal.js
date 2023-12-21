@@ -4,8 +4,8 @@ import { StyleSheet , View, Text , Image} from 'react-native';
 export default function Todaydeal() {
     return(
     <View style = {style.container}>
-        <Text style = {style.text2}>Save upto 75% OFF on Today's Deal</Text>
-        <Text style = {style.text}>Shop now
+        <Text style = {style.deal}>Save upto 75% OFF on Today's Deal</Text>
+        <Text style = {style.shop}>Shop now
         <Image 
         source={require('../../assets/arrow.png')}
         style = {style.image}
@@ -18,24 +18,26 @@ export default function Todaydeal() {
 const style = StyleSheet.create(
     {
         container :{
+            height : 90,
             backgroundColor : '#5d1982',
             textAlign : 'center',
             display : 'flex',
-            justifyContent : 'center',
+            flexDirection : 'column',
+            justifyContent : 'flex-end',
             alignItems : 'center',
-            height : 47 ,
         },
 
-        text : {
+        shop : {
             fontWeight : 'bold',
             fontSize : 20,
             textDecorationLine : 'underline',
             color : 'white',
         },
 
-        text2 : {
+        deal : {
             fontSize : 15,
             color : 'white',
+            justifyContent : 'flex-end'
         },
 
         image : {
